@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>High Kicks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bona+Nova&family=Bona+Nova+SC&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-color: #f1c6d2;
@@ -15,7 +16,7 @@
     *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Bona Nova', serif;
       line-height: 1.5;
       background-color: var(--bg-color);
       color: var(--primary-color);
@@ -36,7 +37,7 @@
       padding: 1rem;
     }
     header img {
-      height: 6rem;
+      height: 30rem;
       width: auto;
     }
     nav {
@@ -65,6 +66,7 @@
     }
     h1 {
       text-align: center;
+      font-family: 'Bona Nova SC', serif;
       font-size: 2.5rem;
       margin: 2rem 0;
       display: flex;
@@ -118,22 +120,47 @@
     }
     .contact-button:hover,
     .contact-button:focus { outline: 3px solid var(--primary-color); }
-    footer {
-      background: var(--bg-color);
+    
+    .contact-heading {
+      background: var(--accent-color);
+      color: white;
+      font-family: 'Bona Nova SC', serif;
       text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 2rem;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
-    footer address {
-      display: inline-block;
-      text-align: left;
-      font-style: normal;
-      line-height: 1.4;
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1000px; /* New */
+      margin: 0 auto;    /* New - center the content */
+      width: 100%;
+      padding: 0 2rem; /* New - add padding inside */
+      flex-wrap: wrap;
+      gap: 2rem;
     }
-    footer img {
-      display: block;
-      margin: 1rem auto 0;
+
+    .footer-info {
+      flex: 1; /* New */
+      min-width: 250px;
+      font-family: 'Bona Nova', serif;
+      font-size: 1.2rem;
     }
+
+    .footer-info p {
+      margin: 0.5rem 0;
+    }
+
+    .footer-logo img {
+      width: 250px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
     /* Mobile-first: single column */
     .offerings { grid-template-columns: 1fr; }
     @media (min-width: 48rem) {
@@ -145,7 +172,7 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
   <header>
-    <img src="assets/logo.png" alt="High Kicks Academy logo">
+    <img src="assets/karategirl.png" alt="High Kicks Academy logo">
   </header>
   <nav aria-label="Main Navigation">
     <button onclick="scrollTo('main-content')">Home</button>
@@ -154,10 +181,6 @@
   </nav>
   <main id="main-content">
     <h1>HIGH KICKS</h1>
-    <section id="about-us" aria-labelledby="about-label">
-  <h2 id="about-label">About High Kicks Academy</h2>
-  <p>At High Kicks Academy, we focus on building confidence, strength, and discipline through martial arts. Our experienced instructors work with students of all ages to help them achieve their personal best, inside and outside the studio. We believe in fostering a supportive, inclusive environment where students of all backgrounds can thrive.</p>
-</section>
     <section class="offerings" id="offerings-section" aria-labelledby="offering-label">
       <figure>
         <img src="assets/body image.jpg" alt="Instructor teaching child a karate move">
@@ -177,15 +200,19 @@
         </table>
       </div>
     </section>
-    <button class="contact-button" onclick="scrollTo('contact-footer')">Contact Us</button>
   </main>
   <footer id="contact-footer">
-    <address>
-      <p><strong>Phone:</strong> <a href="tel:+19199999999">(919) 999‑9999</a></p>
-      <p><strong>Email:</strong> <a href="mailto:highkicks@gmail.com">highkicks@gmail.com</a></p>
-      <p><strong>Address:</strong><br>999 Chapel Hill St,<br>Chapel Hill, NC 27514</p>
-    </address>
-    <img src="assets/logo.png" alt="High Kicks Academy logo">
+    <h2 class="contact-heading">Contact Us</h2>
+    <div class="footer-content">
+      <address class="footer-info">
+        <p><strong>Phone:</strong> <a href="tel:+19199999999">(919) 999‑9999</a></p>
+        <p><strong>Email:</strong> <a href="mailto:highkicks@gmail.com">highkicks@gmail.com</a></p>
+        <p><strong>Address:</strong><br>999 Chapel Hill St,<br>Chapel Hill, NC 27514</p>
+      </address>
+      <div class="footer-logo">
+        <img src="assets/girlwithsocial.png" alt="High Kicks Academy logo">
+      </div>
+    </div>
   </footer>
   <script>
     function scrollTo(id) {
