@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Kicks</title>
+  <style>
+    :root {
+      --bg-color: #f1c6d2;
+      --primary-color: #1e1432;
+      --accent-color: #a8374f;
+      --button-padding: 0.5rem 1rem;
+      --button-radius: 0.3125rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      background-color: var(--bg-color);
+      color: var(--primary-color);
+    }
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: white;
+      padding: 0.5rem;
+      z-index: 100;
+      transition: top 0.3s;
+    }
+    .skip-link:focus { top: 0; }
+    header {
+      text-align: center;
+      padding: 1rem;
+    }
+    header img {
+      height: 6rem;
+      width: auto;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+    nav button {
+      background: var(--accent-color);
+      border: none;
+      color: #fff;
+      padding: var(--button-padding);
+      font-size: 1rem;
+      border-radius: var(--button-radius);
+      cursor: pointer;
+    }
+    nav button:hover,
+    nav button:focus {
+      outline: 3px solid var(--primary-color);
+    }
+    main {
+      max-width: 60rem;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h1::before, h1::after {
+      content: '';
+      display: block;
+      width: 4rem;
+      height: 0.125rem;
+      background: var(--primary-color);
+      margin: 0 0.5rem;
+    }
+    .offerings {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .offerings figure {
+      margin: 0;
+    }
+    .offerings img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0.5rem;
+    }
+    .offerings figcaption {
+      font-size: 0.875rem;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    .pricing table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .pricing th, .pricing td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .contact-button {
+      background: var(--accent-color);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: var(--button-radius);
+      cursor: pointer;
+      display: block;
+      margin: 2rem auto;
+    }
+    .contact-button:hover,
+    .contact-button:focus { outline: 3px solid var(--primary-color); }
+    footer {
+      background: var(--bg-color);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+    }
+    footer address {
+      display: inline-block;
+      text-align: left;
+      font-style: normal;
+      line-height: 1.4;
+    }
+    footer img {
+      display: block;
+      margin: 1rem auto 0;
+    }
+    /* Mobile-first: single column */
+    .offerings { grid-template-columns: 1fr; }
+    @media (min-width: 48rem) {
+      /* two columns on wider screens */
+      .offerings { grid-template-columns: 1fr 1fr; align-items: start; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <header>
+    <img src="assets/logo.png" alt="High Kicks Academy logo">
+  </header>
+  <nav aria-label="Main Navigation">
+    <button onclick="scrollTo('main-content')">Home</button>
+    <button onclick="scrollTo('offerings-section')">Classes</button>
+    <button onclick="scrollTo('contact-footer')">Contact</button>
+  </nav>
+  <main id="main-content">
+    <h1>HIGH KICKS</h1>
+    <section class="offerings" id="offerings-section" aria-labelledby="offering-label">
+      <figure>
+        <img src="assets/body image.jpg" alt="Instructor teaching child a karate move">
+      </figure>
+      <div class="pricing">
+        <h2 id="offering-label">Class Offerings & Prices</h2>
+        <table>
+          <thead>
+            <tr><th>Duration</th><th>Price</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1 Month</td><td>$100</td></tr>
+            <tr><td>3 Months</td><td>$250</td></tr>
+            <tr><td>6 Months</td><td>$515</td></tr>
+            <tr><td>12 Months</td><td>$1100</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <button class="contact-button" onclick="scrollTo('contact-footer')">Contact Us</button>
+  </main>
+  <footer id="contact-footer">
+    <address>
+      <p><strong>Phone:</strong> <a href="tel:+19199999999">(919) 999‑9999</a></p>
+      <p><strong>Email:</strong> <a href="mailto:highkicks@gmail.com">highkicks@gmail.com</a></p>
+      <p><strong>Address:</strong><br>999 Chapel Hill St,<br>Chapel Hill, NC 27514</p>
+    </address>
+    <img src="assets/logo.png" alt="High Kicks Academy logo">
+  </footer>
+  <script>
+    function scrollTo(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
