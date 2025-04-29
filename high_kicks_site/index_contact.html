@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Kicks</title>
+    <style>
+      body {
+    background-color: #F1BDD2;
+    color: #161240;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+nav {
+    background-color: #B5375B;
+    padding: 10px;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin-right: 15px;
+    text-align: center;
+    flex-grow: 1;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #F1BDD2;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+nav ul li a:hover {
+    background-color: #161240;
+    color: #F1BDD2;
+}
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+form {
+    max-width: 50%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #e3e3e3;
+    border-radius: 8px;
+}
+label, input, textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+}
+input[type="submit"] {
+    background-color: #B5375B;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #161240;
+    color: #fff;
+}
+footer p {
+    margin: 5px;
+}
+.foot{
+    text-align: left;
+}
+
+.img{
+    display: block;
+    width: 100%;
+    text-align: right;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+    form {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index_home.html">Main Page</a></li>
+                <li><a href="#">Class Offerings and Prices</a></li>
+                <li><a href="index_contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>High Kicks</h1>
+            <img src="IMG_0582FB897E21-1-removebg-preview.png" alt="kick">
+        </header>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+        <footer>
+            <div class="foot">
+                <p>
+                    Phone: (919)-999-9999
+                </p>
+                <p>Email: highkicks@gmail.com</p>    
+                    
+                    
+                <p>Address: 999 Chapel Hill St, Chapel Hill, NC, 27514</p> 
+                <div class="img"><img src="Screen_Shot_2025-04-28_at_9.18.10_PM-removebg-preview.png" alt="social"></div>
+                
+            </div>
+            <p>&copy; 2025 High Kicks. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
